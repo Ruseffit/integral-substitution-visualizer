@@ -1,0 +1,238 @@
+.hero-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 4rem;
+    letter-spacing: 3px;
+}
+
+/* ===========================
+   Aqui arriba, para cambiar fuente (tipografia el tipo de letra de bienvenida)
+   Y abajo modifique el color donde decia descarga 
+=========================== */
+
+:root {
+    --color-primario: #770101;
+    --color-secundario: #a70b13d3;
+    --color-texto: #ffffff;
+}
+
+/* ===========================
+   HERO / Fondo de la página
+   Cambia la URL dentro de url('...')
+   por la imagen que quieras usar de fondo
+=========================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+    background-image: url('https://i.ibb.co/Z1JX4Zr9/Chat-GPT-Image-18-jun-2026-21-23-09.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Capa oscura para que el texto se lea mejor sobre el fondo */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+/* ========== Lo modifique y adapte para mi logo, el icon que le puse
+se encuentra el link en el html========== */
+.navbar {
+    position: fixed;           /* o absolute, según tu diseño */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    background: rgba(0, 0, 0, 0.3);  /* Transparente oscuro */
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* ========== LOGO ========== */
+.logo {
+    display: flex;             /* Esto es CLAVE */
+    align-items: center;
+}
+
+/* ========== Asi controlo el tamaño del logo que coloque ========== */
+
+.logo img {
+    height: auto;      /* Se ajusta al ancho */
+    width: 200px;      /* Ancho fijo */
+    display: block;
+}
+
+/* ========== MENÚ ========== */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+}
+/* ===========================
+   CONTENIDO PRINCIPAL DEL HERO
+=========================== */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-texto);
+    padding: 0 1rem;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 32rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-principal {
+    background-color: var(--color-primario);
+    color: var(--color-texto);
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* el botton principal "descargar", cuando se presiona se cambio de color*/
+.btn-principal:hover {
+    background-color: var(--color-secundario);
+    color: #f3f2f2;
+    transform: scale(1.05);
+}
+
+/* ===========================
+   IMÁGENES FLOTANTES (parallax)
+   - El "wrapper" hace que la imagen flote sola (arriba/abajo)
+   - JS mueve la imagen (.float-img) según la posición del mouse
+=========================== */
+.float-wrapper {
+    position: absolute;
+    z-index: 2;
+    animation: float 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.float-img {
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.15s ease-out;
+}
+
+.float-wrapper-1 {
+    top: 18%;
+    left: 8%;
+    animation-delay: 0s;
+}
+
+.float-wrapper-2 {
+    top: 65%;
+    left: 15%;
+    animation-delay: 1.5s;
+}
+
+.float-wrapper-3 {
+    top: 25%;
+    right: 10%;
+    animation-delay: 0.8s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+/* ===========================
+   SECCIONES DEBAJO DEL HERO
+=========================== */
+.seccion {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.seccion h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-primario);
+}
+
+.seccion p {
+    max-width: 40rem;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media screen and (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .nav-links {
+        gap: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .float-wrapper-1 img {
+        width: 70px;
+    }
+
+    .float-wrapper-2 img {
+        width: 55px;
+    }
+
+    .float-wrapper-3 img {
+        width: 90px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .float-wrapper {
+        animation: none;
+    }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    <link href="https://fonts.googleapis.com/css2?
+    family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===========================
+         HERO / Página de inicio
+         El fondo se pone en style.css, en la clase .hero
+         (busca la propiedad background-image)
+    ============================ -->
+
+    <header class="hero">
+
+        <nav class="navbar">
+        <a href="#" class="logo-link">  
+        <div class="logo">
+        <img src="https://i.ibb.co/TFQkHyG/3-sin-t-tulo-20260618225720.png" alt="Logo de Curvolve" class="logo-img">
+        </div>
+        </a>
+         </a>
+            <!-- Nombre de mi proyecto -->
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre">Sobre nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#inicioSesion">Iniciar Sesion</a></li>
+
+            </ul>
+        </nav>
+
+        <div class="hero-content">
+            <h1>Bienvenido a Curvolve</h1>
+            <!-- Descripción breve de tu proyecto -->
+            <p>Accede a una nueva forma de visualizar integrales.</p>
+            <!-- Botón del principio, es el que va a estar conectada 
+             a la pagina de descarga-->
+            <a href="#sobre" class="btn-principal">Descarga ahora</a>
+        </div>
+
+        
+
+        <!-- ===========================
+             Imágenes flotantes (parallax)
+             Cambia el "src" por la URL de tu imagen
+             El atributo data-speed controla qué tanto
+             se mueve cada imagen al mover el mouse(
+             pero lo voy a cancelar para que no funcione a futuro codigo jaja)
+        ============================ -->
+<!--
+        <div class="float-wrapper float-wrapper-1">
+            <img src="https://i.ibb.co/Z11rPcP6/1.png"
+                 alt="Imagen decorativa 1"
+                 class="float-img"
+                 data-speed="1080">
+        </div>
+
+        <div class="float-wrapper float-wrapper-2">
+            <img src="https://i.ibb.co/QFR8CrkY/2.png"
+                 alt="Imagen decorativa 2"
+                 class="float-img"
+                 data-speed="35">
+        </div>
+
+        <div class="float-wrapper float-wrapper-3">
+            <img src="https://i.ibb.co/pv8S30yX/3.png"
+                 alt="Imagen decorativa 3"
+                 class="float-img"
+                 data-speed="50">
+        </div>
+-->
+    </header> !>
+    <!-- ===========================
+         Sección "Sobre nosotros"
+         Aquí va el resto del contenido de la página
+    ============================ -->
+    <section id="sobre" class="seccion">
+        <h2>Sobre nosotros</h2>
+        <p>Visualiza el cambio de variable en integrales como nunca antes. Curvolve te permite ver,
+            en tiempo real, cómo una sustitución transforma una curva</p>
+    </section>
+
+    <section id="contacto" class="seccion">
+        <h2>Contacto</h2>
+        <p>Aquí puedes agregar un formulario o tus datos de contacto.</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
